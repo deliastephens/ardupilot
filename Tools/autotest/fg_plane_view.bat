@@ -8,7 +8,10 @@ fgfs ^
     --fdm=external ^
     --aircraft=Rascal110-JSBSim ^
     --fg-aircraft=%AUTOTESTDIR% ^
-    --airport=KSFO ^
+    --lat=20.819083 ^
+    --lon=-100.414276 ^
+    --altitude=2023 ^
+    --heading=360 ^
     --geometry=650x550 ^
     --bpp=32 ^
     --disable-anti-alias-hud ^
