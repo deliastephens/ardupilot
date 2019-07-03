@@ -12,7 +12,7 @@
 	url = git://github.com/ArduPilot/mavlink
 [submodule "gtest"]
 	path = modules/gtest
-	url = git://github.com/ArduPilot/googletest
+	url = https://github.com/ArduPilot/googletest
 [submodule "modules/ChibiOS"]
 	path = modules/ChibiOS
 	url = git://github.com/ArduPilot/ChibiOS.git
