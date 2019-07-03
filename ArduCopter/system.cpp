@@ -52,7 +52,7 @@ void Copter::init_ardupilot()
     serial_manager.init();
 
     // setup first port early to allow BoardConfig to report errors
-    gcs().chan(0).setup_uart(serial_manager, AP_SerialManager::SerialProtocol_MAVLink, 0);
+    gcs().chan(0).setup_uart(0);
 
 
     // Register mavlink_delay_cb, which will run anytime you have
@@ -85,7 +85,7 @@ void Copter::init_ardupilot()
     barometer.init();
 
     // setup telem slots with serial ports
-    gcs().setup_uarts(serial_manager);
+    gcs().setup_uarts();
 
 #if OSD_ENABLED == ENABLED
     osd.init();
@@ -127,11 +127,6 @@ void Copter::init_ardupilot()
      *  the RC library being initialised.
      */
     hal.scheduler->register_timer_failsafe(failsafe_check_static, 1000);
-
-#if BEACON_ENABLED == ENABLED
-    // give AHRS the range beacon sensor
-    ahrs.set_beacon(&g2.beacon);
-#endif
 
     // Do GPS init
     gps.set_log_gps_bit(MASK_LOG_GPS);
