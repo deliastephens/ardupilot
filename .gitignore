@@ -113,3 +113,6 @@ cmake-build-*/
 /reports/
 /GCOV_*.log
 
+modules/gtest
+modules/mavlink
+modules/waf
