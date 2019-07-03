@@ -670,7 +670,7 @@ private:
     bool far_from_EKF_origin(const Location& loc);
 
     // compassmot.cpp
-    MAV_RESULT mavlink_compassmot(mavlink_channel_t chan);
+    MAV_RESULT mavlink_compassmot(const GCS_MAVLINK &gcs_chan);
 
     // crash_check.cpp
     void crash_check();
@@ -771,8 +771,8 @@ private:
 
     // motor_test.cpp
     void motor_test_output();
-    bool mavlink_motor_test_check(mavlink_channel_t chan, bool check_rc);
-    MAV_RESULT mavlink_motor_test_start(mavlink_channel_t chan, uint8_t motor_seq, uint8_t throttle_type, uint16_t throttle_value, float timeout_sec, uint8_t motor_count);
+    bool mavlink_motor_test_check(const GCS_MAVLINK &gcs_chan, bool check_rc);
+    MAV_RESULT mavlink_motor_test_start(const GCS_MAVLINK &gcs_chan, uint8_t motor_seq, uint8_t throttle_type, uint16_t throttle_value, float timeout_sec, uint8_t motor_count);
     void motor_test_stop();
 
     // motors.cpp
